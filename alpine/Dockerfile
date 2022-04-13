@@ -39,6 +39,9 @@ RUN apk update && \
         xz \
         python3-dev \
         boost-dev \
+        fmt-dev \
+        gtest-dev \
+        benchmark-dev \
         qt6-qtbase-dev \
         qt6-qt3d-dev \
         qt6-qtcharts-dev \

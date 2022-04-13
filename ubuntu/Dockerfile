@@ -59,6 +59,9 @@ RUN apt-get update && apt-get -y install \
 	help2man \
 	git \
     libboost-all-dev \
+    libfmt-dev \
+    libgtest-dev \
+    libbenchmark-dev \
     qt6-base-dev \
     qt6-3d-dev \
     qt6-multimedia-dev \
