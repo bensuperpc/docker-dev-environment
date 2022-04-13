@@ -68,6 +68,7 @@ RUN apt-get update && apt-get -y install \
     qt6-quick3d-dev \
     qt6-wayland-dev \
     qt6-webengine-dev \
+    qt6-webview-dev \
     qt6-positioning-dev \
     qt6-webview-plugins \
     qt6-qpa-plugins \

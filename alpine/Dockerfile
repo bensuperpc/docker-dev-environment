@@ -17,7 +17,7 @@ RUN apk update && \
         bison \
         cmake \
         build-base \
-        openmp \
+        libgomp \
         curl \
         file \
         flex \
@@ -44,9 +44,8 @@ RUN apk update && \
         qt6-qtcharts-dev \
         qt6-qtquick3d-dev \
         qt6-qtmultimedia-dev \
-        qt6-qtwebengine-dev \
+        qt6-qtwebview-dev \
         qt6-qtnetworkauth-dev \
-        qt6-qtpositioning-dev \
         qt6-qtquicktimeline-dev \
         qt6-qtsensors-dev \
         qt6-qtserialport-dev \

@@ -21,7 +21,7 @@
 #//                                                          //
 #//////////////////////////////////////////////////////////////
 BASE_OS    := debian
-BASE_IMAGE := $(BASE_OS): bookworm-slim
+BASE_IMAGE := $(BASE_OS):bookworm-slim
 IMAGE_NAME := bensuperpc/dev-environment
 DOCKERFILE := Dockerfile
 CROSSTOOL_VERSION := master
