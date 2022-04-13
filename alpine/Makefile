@@ -21,7 +21,7 @@
 #//                                                          //
 #//////////////////////////////////////////////////////////////
 BASE_OS    := alpine
-BASE_IMAGE := $(BASE_OS):3.14
+BASE_IMAGE := $(BASE_OS):3.15
 IMAGE_NAME := bensuperpc/dev-environment
 DOCKERFILE := Dockerfile
 CROSSTOOL_VERSION := master
