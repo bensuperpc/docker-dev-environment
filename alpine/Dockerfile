@@ -12,6 +12,7 @@ LABEL mantainer="Bensuperpc <bensuperpc@gmail.com>"
 RUN apk update && \
     apk add --no-cache \
         --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+        --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
         --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
         autoconf \
         automake \
