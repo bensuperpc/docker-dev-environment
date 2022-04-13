@@ -11,13 +11,15 @@ LABEL mantainer="Bensuperpc <bensuperpc@gmail.com>"
 
 RUN apk update && \
     apk add --no-cache \
+        --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+        --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
         autoconf \
         automake \
         rsync \
         bison \
         cmake \
         build-base \
-        libgomp \
+        openmp \
         curl \
         file \
         flex \
@@ -45,6 +47,7 @@ RUN apk update && \
         qt6-qtquick3d-dev \
         qt6-qtmultimedia-dev \
         qt6-qtwebview-dev \
+        qt6-qtwebengine-dev \
         qt6-qtnetworkauth-dev \
         qt6-qtquicktimeline-dev \
         qt6-qtsensors-dev \
