@@ -1,4 +1,4 @@
-ARG DOCKER_IMAGE=debian:bookworm-slim
+ARG DOCKER_IMAGE=debian:bookworm
 ARG CT_VERSION_GIT=master
 
 FROM $DOCKER_IMAGE
