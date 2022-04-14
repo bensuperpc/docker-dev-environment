@@ -31,7 +31,7 @@ jobs:
         run: make qemu
       - name: "🛠️ Build and 📤 Upload to hub.docker.com"
         run: |
-#            docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
+            docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
             make ${{ matrix.version }}
       - name: "🧹 Clean"
         run: make clean
