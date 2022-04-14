@@ -19,9 +19,8 @@
 #//                                                          //
 #//////////////////////////////////////////////////////////////
 
-TAG_VERSION=latest
+TAG_VERSION=debian-latest
 DOCKER_IMAGE=bensuperpc/crosstool-ng
-COMPILER_EXEC=ct-ng
 
 case "$1" in
     -version|-v)
@@ -30,7 +29,7 @@ case "$1" in
         shift
         ;;
     -h|help|--help)
-        echo "Usage: ${0##*/} [-version latest $COMPILER_EXEC aarch64-rpi4-linux-gnu]"
+        echo "Usage: ${0##*/} [-version debian-latest]"
         exit 1
         ;;
 esac
@@ -41,4 +40,4 @@ then
     exit 1
 fi
 
-docker run --rm -v "$PWD":/usr/src/myapp --workdir /usr/src/myapp ${DOCKER_IMAGE}:${TAG_VERSION} $@
+docker run --rm -v "$PWD":/usr/src/myapp --workdir /usr/src/myapp ${DOCKER_IMAGE}:${TAG_VERSION} "$@"

@@ -18,6 +18,8 @@ RUN apk update && \
     automake \
     rsync \
     bison \
+    meson \
+    ninja \
     cmake \
     cppcheck \
     gdb \
@@ -43,6 +45,7 @@ RUN apk update && \
     unzip \
     wget \
     xz \
+    gettext \
     python3-dev \
     boost-dev \
     fmt-dev \
