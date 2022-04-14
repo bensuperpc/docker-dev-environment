@@ -26,12 +26,17 @@ RUN apk update && \
     cppcheck \
     valgrind \
     lcov \
+    gcovr \
     build-base \
     openmp \
     clang-dev \
+    clang-analyzer \
+    clang-extra-tools \
+    clang-static \
     curl \
     file \
     flex \
+    bash \
     gawk \
     git \
     gperf \
@@ -47,6 +52,7 @@ RUN apk update && \
     xz \
     gettext \
     python3-dev \
+    py3-pip \
     boost-dev \
     fmt-dev \
     gtest-dev \

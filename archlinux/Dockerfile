@@ -13,6 +13,7 @@ RUN pacman-key --init && pacman -Syu --noconfirm && \
     clang \
     openmp \
     opencv \
+    opencv-samples \
     rsync \
     openssl \
     devtools \
@@ -21,6 +22,8 @@ RUN pacman-key --init && pacman -Syu --noconfirm && \
     gettext \
     gzip \
     python \
+    python-opencv \
+    python-pip \
     cmake \
     extra-cmake-modules \
     cppcheck \
@@ -28,6 +31,7 @@ RUN pacman-key --init && pacman -Syu --noconfirm && \
     cppcheck \
     valgrind \
     lcov \
+    gcovr \
     meson \
     automake \
     autogen \

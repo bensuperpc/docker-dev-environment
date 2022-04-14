@@ -13,12 +13,16 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get -y install \
 	build-essential \
-    libomp-dev \
     clang \
     libomp-dev \
+    clang-tidy \
+    clang-format \
+    clang-tools \
+    clangd \
     ninja-build \
     python3-distutils \
     python3-dev \
+    python3-pip \
 	bison \
 	flex \
 	autoconf \
@@ -29,6 +33,7 @@ RUN apt-get update && apt-get -y install \
     cppcheck \
     valgrind \
     lcov \
+    gcovr \
 	texinfo \
 	unzip \
 	libtool-bin \
