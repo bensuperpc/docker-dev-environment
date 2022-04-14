@@ -30,10 +30,19 @@ RUN pacman-key --init && pacman -Syu --noconfirm && \
     lcov \
     meson \
     automake \
+    autogen \
     ninja \
 	pkgconf \
+    texinfo \
+	byacc \
+    bash \
+    bc \
+    bzip2 \
+    ca-certificates \
+    gnupg \
     wget \
-    wget \
+    unzip \
+    curl \
     boost \
     fmt \
     gtest \
