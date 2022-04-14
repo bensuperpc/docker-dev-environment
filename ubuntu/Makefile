@@ -49,7 +49,7 @@ $(BASE_OS): all
 all: $(DOCKERFILE)
 	$(DOCKER) buildx build . -f $(DOCKERFILE) -t $(IMAGE_NAME):$(BASE_OS)-$(TAG) -t $(IMAGE_NAME):$(BASE_OS) \
 	-t $(IMAGE_NAME):$(BASE_OS)-$(CROSSTOOL_VERSION)  --build-arg BUILD_DATE=$(DATE_FULL) --build-arg DOCKER_IMAGE=$(BASE_IMAGE) --platform $(COM_ARCH_LIST) \
-	-t $(IMAGE_NAME):$(BASE_OS)-latest --build-arg VERSION=$(VERSION) --build-arg CT_VERSION_GIT=$(CROSSTOOL_VERSION) --progress=plain
+	-t $(IMAGE_NAME):$(BASE_OS)-latest --build-arg VERSION=$(VERSION) --build-arg CT_VERSION_GIT=$(CROSSTOOL_VERSION) --progress=plain --push
 
 push: all
 
