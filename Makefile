@@ -1,4 +1,4 @@
-SUBDIRS := debian alpine ubuntu
+SUBDIRS := debian alpine ubuntu archlinux
 
 DOCKER := docker
 

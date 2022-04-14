@@ -14,6 +14,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y install \
 	build-essential \
     libomp-dev \
+    clang \
+    libomp-dev \
     ninja-build \
     python3-distutils \
     python3-dev \
@@ -22,6 +24,11 @@ RUN apt-get update && apt-get -y install \
 	autoconf \
 	automake \
     cmake \
+    cppcheck \
+    gdb \
+    cppcheck \
+    valgrind \
+    lcov \
 	texinfo \
 	unzip \
 	libtool-bin \
@@ -63,6 +70,10 @@ RUN apt-get update && apt-get -y install \
     libfmt-dev \
     libgtest-dev \
     libbenchmark-dev \
+    catch2 \
+    libsfml-dev \
+    libsdl2-dev \
+    libopencv-dev \
     qt6-base-dev \
     qt6-3d-dev \
     qt6-multimedia-dev \
@@ -82,6 +93,16 @@ RUN apt-get update && apt-get -y install \
 	--no-install-recommends \
 	&& apt-get -y autoremove --purge && \
 	rm -rf /var/lib/apt/lists/*
+
+RUN git clone --recurse-submodules --remote-submodules https://github.com/crosstool-ng/crosstool-ng.git \
+    && cd crosstool-ng \
+    && git checkout ${CT_VERSION_GIT} \
+    && ./bootstrap \
+    && ./configure --enable-local \
+    && make -j$(nproc) \
+    && ./ct-ng --version \
+    && cd .. \
+    && rm -rf crosstool-ng
 
 LABEL org.label-schema.schema-version="1.0" \
 	  org.label-schema.build-date=$BUILD_DATE \

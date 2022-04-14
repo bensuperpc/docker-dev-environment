@@ -1,6 +1,5 @@
-ARG DOCKER_IMAGE=alpine:3.15
+ARG DOCKER_IMAGE=archlinux:base-devel
 ARG CT_VERSION_GIT=master
-
 FROM $DOCKER_IMAGE
 
 ARG VERSION="1.0.0"
@@ -9,66 +8,53 @@ ENV VERSION=$VERSION
 LABEL author="Bensuperpc <bensuperpc@gmail.com>"
 LABEL mantainer="Bensuperpc <bensuperpc@gmail.com>"
 
-RUN apk update && \
-    apk add --no-cache \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-    autoconf \
-    automake \
+RUN pacman-key --init && pacman -Syu --noconfirm && \
+    pacman -S --noconfirm \
+    clang \
+    openmp \
+    opencv \
     rsync \
-    bison \
+    openssl \
+    devtools \
+    help2man \
+    xz \
+    gettext \
+    gzip \
+    python \
     cmake \
+    extra-cmake-modules \
     cppcheck \
     gdb \
     cppcheck \
     valgrind \
     lcov \
-    build-base \
-    openmp \
-    clang-dev \
-    curl \
-    file \
-    flex \
-    gawk \
-    git \
-    gperf \
-    help2man \
-    libc-dev \
-    libtool \
-    ncurses-dev \
-    patch \
-    sed \
-    texinfo \
-    unzip \
+    meson \
+    automake \
+    ninja \
+	pkgconf \
     wget \
-    xz \
-    python3-dev \
-    boost-dev \
-    fmt-dev \
-    gtest-dev \
-    benchmark-dev \
-    catch2 \
-    sfml-dev \
-    sdl2-dev \
-    opencv-dev \
-    qt6-qtbase-dev \
-    qt6-qt3d-dev \
-    qt6-qtcharts-dev \
-    qt6-qtimageformats-dev \
-    qt6-qtnetworkauth-dev \
-    qt6-qtcharts-dev \
-    qt6-qtquick3d-dev \
-    qt6-qtmultimedia-dev \
-    qt6-qtwebview-dev \
-    qt6-qtwebengine-dev \
-    qt6-qtnetworkauth-dev \
-    qt6-qtquicktimeline-dev \
-    qt6-qtsensors-dev \
-    qt6-qtserialport-dev \
-    qt6-qtshadertools-dev \
-    qt6-qtvirtualkeyboard-dev \
-    qt6-qtwayland-dev
+    wget \
+    boost \
+    fmt \
+    gtest \
+    benchmark \
+    qt6-base \
+    qt6-charts \
+    qt6-doc \
+    qt6-examples \
+    qt6-connectivity \
+    qt6-3d \
+    qt6-imageformats \
+    qt6-multimedia \
+    qt6-tools \
+    qt6-virtualkeyboard \
+    qt6-wayland \
+    qt6-webview \
+    qt6-shadertools \
+    qt6-serialport \
+    qt6-quick3d \
+    qt6-quicktimeline\
+    && pacman -Scc --noconfirm
 
 RUN git clone --recurse-submodules --remote-submodules https://github.com/crosstool-ng/crosstool-ng.git \
     && cd crosstool-ng \
@@ -79,6 +65,7 @@ RUN git clone --recurse-submodules --remote-submodules https://github.com/crosst
     && ./ct-ng --version \
     && cd .. \
     && rm -rf crosstool-ng
+
 
 LABEL org.label-schema.schema-version="1.0" \
 	  org.label-schema.build-date=$BUILD_DATE \
