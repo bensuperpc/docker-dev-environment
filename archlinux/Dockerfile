@@ -35,13 +35,14 @@ RUN pacman-key --init && pacman -Syu --noconfirm && \
     valgrind \
     lcov \
     gcovr \
+    mold \
     meson \
     automake \
     autogen \
     ninja \
-	pkgconf \
+    pkgconf \
     texinfo \
-	byacc \
+    byacc \
     bash \
     bc \
     bzip2 \
