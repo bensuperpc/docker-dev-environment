@@ -25,22 +25,23 @@ RUN apt-get update && apt-get -y install \
     python3-distutils \
     python3-dev \
     python3-pip \
-	bison \
-	flex \
-	autoconf \
-	automake \
+    bison \
+    flex \
+    autoconf \
+    automake \
     cmake \
+    mold \
     cppcheck \
     gdb \
     cppcheck \
     valgrind \
     lcov \
     gcovr \
-	texinfo \
-	unzip \
-	libtool-bin \
-	libncurses5-dev \
-	byacc \
+    texinfo \
+    unzip \
+    libtool-bin \
+    libncurses5-dev \
+    byacc \
     autogen \
     bash \
     bc \
