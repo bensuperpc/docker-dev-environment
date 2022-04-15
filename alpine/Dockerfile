@@ -36,6 +36,7 @@ RUN apk update && \
     clang-analyzer \
     clang-extra-tools \
     clang-static \
+    mold \
     curl \
     file \
     flex \
