@@ -17,8 +17,7 @@ RUN dnf -y groupinstall "Development Tools" \
     clang-tools-extra \
     clang-devel \
     qt6-qtbase-devel \
-    qt6-devel \
-    Qt6-qtmultimedia-devel \
+    qt6-qtmultimedia-devel \
     qt6-qt3d-devel \
     qt6-qtcharts-devel \
     qt6-qtdeclarative-devel \
@@ -33,7 +32,7 @@ RUN dnf -y groupinstall "Development Tools" \
     fmt-devel \
     gtest-devel \
     google-benchmark-devel \
-    catch2-devel \
+    catch22 \
     openmpi-devel \
     valgrind-devel \
     gdb \
@@ -63,7 +62,6 @@ RUN dnf -y groupinstall "Development Tools" \
     gzip \
     zip \
     lzip \
-    ssh \
     && dnf clean all -y
 
 
