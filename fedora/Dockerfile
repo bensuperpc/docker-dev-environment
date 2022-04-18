@@ -39,6 +39,7 @@ RUN dnf -y groupinstall "Development Tools" \
     gdb \
     cppcheck \
     gcovr \
+    mold \
     lcov \
     byacc \
     distcc \

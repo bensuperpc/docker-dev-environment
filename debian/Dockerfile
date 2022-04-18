@@ -32,16 +32,17 @@ RUN apt-get update && apt-get -y install \
 	autoconf \
 	automake \
     cmake \
+    mold \
     cppcheck \
     gdb \
     valgrind \
     lcov \
     gcovr \
-	texinfo \
-	unzip \
-	libtool-bin \
-	libncurses5-dev \
-	byacc \
+    texinfo \
+    unzip \
+    libtool-bin \
+    libncurses5-dev \
+    byacc \
     autogen \
     bash \
     bc \

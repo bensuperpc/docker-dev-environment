@@ -37,6 +37,7 @@ RUN apk update && \
     clang-extra-tools \
     clang-static \
     distcc \
+    mold \
     curl \
     file \
     flex \
