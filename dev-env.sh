@@ -20,7 +20,7 @@
 #//////////////////////////////////////////////////////////////
 
 TAG_VERSION=debian-latest
-DOCKER_IMAGE=bensuperpc/bensuperpc/dev-environment
+DOCKER_IMAGE=bensuperpc/dev-environment
 
 case "$1" in
     -version|-v)

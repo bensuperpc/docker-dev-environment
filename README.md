@@ -32,6 +32,8 @@ Generate config file
 make linux/amd64 or linux/arm64
 ```
 
+*ARM64 need to be enable in makefile before*
+
 ### Todos
 
  - Write Tests
