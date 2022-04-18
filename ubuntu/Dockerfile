@@ -32,7 +32,6 @@ RUN apt-get update && apt-get -y install \
     cmake \
     cppcheck \
     gdb \
-    cppcheck \
     valgrind \
     lcov \
     gcovr \
@@ -59,6 +58,8 @@ RUN apt-get update && apt-get -y install \
     pax \
     python3-distutils \
     python3-dev \
+    python3-pip \
+    distcc \
     sed \
 	meson \
 	gawk \

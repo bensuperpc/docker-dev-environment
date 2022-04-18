@@ -8,7 +8,7 @@
 #//////////////////////////////////////////////////////////////
 #//                                                          //
 #//  Script, 2022                                            //
-#//  Created: 14, April, 2022                                //
+#//  Created: 18, April, 2022                                //
 #//  Modified: 18, April, 2022                               //
 #//  file: -                                                 //
 #//  -                                                       //
@@ -20,8 +20,8 @@
 #//  CPU: ALL                                                //
 #//                                                          //
 #//////////////////////////////////////////////////////////////
-BASE_OS    := debian
-BASE_IMAGE := $(BASE_OS):bookworm
+BASE_OS    := fedora
+BASE_IMAGE := $(BASE_OS):37
 IMAGE_NAME := bensuperpc/dev-environment
 DOCKERFILE := Dockerfile
 CROSSTOOL_VERSION := master

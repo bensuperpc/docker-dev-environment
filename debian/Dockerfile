@@ -26,6 +26,7 @@ RUN apt-get update && apt-get -y install \
     python3-distutils \
     python3-dev \
     python3-pip \
+    distcc \
 	bison \
 	flex \
 	autoconf \
@@ -33,7 +34,6 @@ RUN apt-get update && apt-get -y install \
     cmake \
     cppcheck \
     gdb \
-    cppcheck \
     valgrind \
     lcov \
     gcovr \

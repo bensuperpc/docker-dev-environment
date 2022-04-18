@@ -1,5 +1,6 @@
-ARG DOCKER_IMAGE=archlinux:base-devel
+ARG DOCKER_IMAGE=fedora:37
 ARG CT_VERSION_GIT=master
+
 FROM $DOCKER_IMAGE
 
 ARG VERSION="1.0.0"
@@ -11,66 +12,59 @@ ENV CT_PREFIX=/usr/src/myapp
 LABEL author="Bensuperpc <bensuperpc@gmail.com>"
 LABEL mantainer="Bensuperpc <bensuperpc@gmail.com>"
 
-RUN pacman-key --init && pacman -Syu --noconfirm && \
-    pacman -S --noconfirm \
-    clang \
-    openmp \
-    opencv \
-    opencv-samples \
-    rsync \
-    openssl \
-    devtools \
-    help2man \
-    xz \
-    gettext \
-    gzip \
-    python \
-    python-opencv \
-    python-pip \
-    cmake \
-    extra-cmake-modules \
-    distcc \
-    cppcheck \
-    gdb \
-    valgrind \
-    lcov \
-    gcovr \
-    meson \
-    automake \
-    autogen \
-    ninja \
-	pkgconf \
-    texinfo \
-	byacc \
-    bash \
-    bc \
-    bzip2 \
-    ca-certificates \
-    gnupg \
-    wget \
-    unzip \
-    curl \
+RUN dnf -y groupinstall "Development Tools" \
+    && dnf install -y \
+    clang-tools-extra \
+    clang-devel \
+    qt6-qtbase-devel \
+    qt6-devel \
+    Qt6-qtmultimedia-devel \
+    qt6-qt3d-devel \
+    qt6-qtcharts-devel \
+    qt6-qtdeclarative-devel \
+    qt6-qtquick3d-devel \
+    opencv-devel \
+    SDL2-devel \
+    SDL2_net-devel \
+    SDL2_mixer-devel \
+    SDL2_image \
     boost \
-    fmt \
-    gtest \
-    benchmark \
-    qt6-base \
-    qt6-charts \
-    qt6-doc \
-    qt6-examples \
-    qt6-connectivity \
-    qt6-3d \
-    qt6-imageformats \
-    qt6-multimedia \
-    qt6-tools \
-    qt6-virtualkeyboard \
-    qt6-wayland \
-    qt6-webview \
-    qt6-shadertools \
-    qt6-serialport \
-    qt6-quick3d \
-    qt6-quicktimeline \
-    && pacman -Scc --noconfirm
+    openssl \
+    fmt-devel \
+    gtest-devel \
+    google-benchmark-devel \
+    catch2-devel \
+    openmpi-devel \
+    valgrind-devel \
+    gdb \
+    cppcheck \
+    gcovr \
+    lcov \
+    byacc \
+    distcc \
+    ca-certificates \
+    ninja-build \
+    automake \
+    cmake \
+    meson \
+    bison \
+    gdb \
+    python3 \
+    help2man \
+    rsync \
+    wget \
+    curl \
+    ncurses-devel \
+    xz-devel \
+    gettext-devel \
+    flex \
+    bc \ 
+    gzip \
+    zip \
+    lzip \
+    ssh \
+    && dnf clean all -y
+
 
 RUN git clone --recurse-submodules --remote-submodules https://github.com/crosstool-ng/crosstool-ng.git \
     && cd /crosstool-ng \
@@ -83,7 +77,6 @@ RUN git clone --recurse-submodules --remote-submodules https://github.com/crosst
     && cd / \
     && ct-ng --version
 
-
 LABEL org.label-schema.schema-version="1.0" \
 	  org.label-schema.build-date=$BUILD_DATE \
 	  org.label-schema.name="bensuperpc/dev-environment" \
@@ -94,9 +87,6 @@ LABEL org.label-schema.schema-version="1.0" \
 	  org.label-schema.vcs-url="https://github.com/bensuperpc/dev-environment" \
 	  org.label-schema.vcs-ref=$VCS_REF \
 	  org.label-schema.docker.cmd="docker build -t bensuperpc/dev-environment -f Dockerfile ."
-
-ENV CT_ALLOW_BUILD_AS_ROOT_SURE=1
-ENV CT_PREFIX=/usr/src/myapp
 
 VOLUME [ "/usr/src/myapp" ]
 WORKDIR /usr/src/myapp
