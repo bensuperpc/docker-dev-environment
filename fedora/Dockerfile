@@ -63,6 +63,7 @@ RUN dnf -y groupinstall "Development Tools" \
     zip \
     lzip \
     texinfo \
+    bzip2 \
     && dnf clean all -y
 
 
