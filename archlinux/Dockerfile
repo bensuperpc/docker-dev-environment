@@ -71,6 +71,7 @@ RUN pacman-key --init && pacman -Syu --noconfirm && \
     qt6-serialport \
     qt6-quick3d \
     qt6-quicktimeline \
+    perl-gd \
     && pacman -Scc --noconfirm
 
 RUN git clone --recurse-submodules --remote-submodules https://github.com/crosstool-ng/crosstool-ng.git \

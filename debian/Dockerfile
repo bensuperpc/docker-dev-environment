@@ -99,6 +99,7 @@ RUN apt-get update && apt-get -y install \
     qt6-qmltooling-plugins \
     qt6-3d-defaultgeometryloader-plugin \
     qt6-image-formats-plugin-pdf \
+    libgd-perl \
 	--no-install-recommends \
 	&& apt-get -y autoremove --purge && \
 	rm -rf /var/lib/apt/lists/*

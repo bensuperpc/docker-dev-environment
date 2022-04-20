@@ -82,7 +82,8 @@ RUN apk update && \
     qt6-qtserialport-dev \
     qt6-qtshadertools-dev \
     qt6-qtvirtualkeyboard-dev \
-    qt6-qtwayland-dev
+    qt6-qtwayland-dev \
+    perl-gd
 
 RUN git clone --recurse-submodules --remote-submodules https://github.com/crosstool-ng/crosstool-ng.git \
     && cd /crosstool-ng \

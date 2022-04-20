@@ -66,6 +66,7 @@ RUN dnf -y groupinstall "Development Tools" \
     bzip2 \
     libtool \
     gnupg2 \
+    perl-GD \
     && dnf clean all -y
 
 
