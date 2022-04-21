@@ -71,6 +71,7 @@ RUN pacman-key --init && pacman -Syu --noconfirm && \
     qt6-serialport \
     qt6-quick3d \
     qt6-quicktimeline \
+    mesa \
     perl-gd \
     && pacman -Scc --noconfirm
 

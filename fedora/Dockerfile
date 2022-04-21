@@ -32,6 +32,7 @@ RUN dnf -y groupinstall "Development Tools" \
     fmt-devel \
     gtest-devel \
     google-benchmark-devel \
+    mesa-libGLw-devel \
     catch22 \
     openmpi-devel \
     valgrind-devel \

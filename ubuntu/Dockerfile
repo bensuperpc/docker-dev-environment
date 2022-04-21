@@ -25,10 +25,11 @@ RUN apt-get update && apt-get -y install \
     python3-distutils \
     python3-dev \
     python3-pip \
-    bison \
-    flex \
-    autoconf \
-    automake \
+    distcc \
+	bison \
+	flex \
+	autoconf \
+	automake \
     cmake \
     mold \
     cppcheck \
@@ -40,6 +41,10 @@ RUN apt-get update && apt-get -y install \
     unzip \
     libtool-bin \
     libncurses5-dev \
+    libgl-dev \
+    libglew-dev \
+    libgl1-mesa-dev \
+    libegl1-mesa-dev \
     byacc \
     autogen \
     bash \
@@ -59,8 +64,6 @@ RUN apt-get update && apt-get -y install \
     pax \
     python3-distutils \
     python3-dev \
-    python3-pip \
-    distcc \
     sed \
 	meson \
 	gawk \
@@ -68,6 +71,7 @@ RUN apt-get update && apt-get -y install \
 	lzip \
     ssh \
     openssl \
+    libssl-dev \
     tar \
     wget \
     xz-utils \
@@ -83,7 +87,10 @@ RUN apt-get update && apt-get -y install \
     libsfml-dev \
     libsdl2-dev \
     libopencv-dev \
+    libvulkan-dev \
     qt6-base-dev \
+    libqt6charts6-dev \
+    libqt6opengl6-dev \
     qt6-3d-dev \
     qt6-multimedia-dev \
     qt6-declarative-dev \
@@ -99,6 +106,20 @@ RUN apt-get update && apt-get -y install \
     qt6-qmltooling-plugins \
     qt6-3d-defaultgeometryloader-plugin \
     qt6-image-formats-plugin-pdf \
+    qml6-module-qtquick \
+    qml6-module-qtqml \
+    qml6-module-qtquick-controls \
+    qml6-module-qtquick-dialogs \
+    qml6-module-qtquick-layouts \
+    qml6-module-qtquick-localstorage \
+    qml6-module-qt3d-animation \
+    qml6-module-qt3d-core \
+    qml6-module-qt3d-extras \
+    qml6-module-qtcore \
+    qml6-module-qtcharts \
+    qml6-module-qtmultimedia \
+    qml6-module-qtquick-window \
+    qml6-module-qtwayland-composito \
     libgd-perl \
 	--no-install-recommends \
 	&& apt-get -y autoremove --purge && \
