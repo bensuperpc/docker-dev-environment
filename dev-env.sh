@@ -23,7 +23,7 @@ TAG_VERSION=debian-latest
 DOCKER_IMAGE=bensuperpc/dev-environment
 
 case "$1" in
-    -version|-v)
+    --version|-v)
         TAG_VERSION=$2
         shift
         shift
