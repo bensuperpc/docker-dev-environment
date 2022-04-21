@@ -119,7 +119,7 @@ RUN apt-get update && apt-get -y install \
     qml6-module-qtcharts \
     qml6-module-qtmultimedia \
     qml6-module-qtquick-window \
-    qml6-module-qtwayland-composito \
+    qml6-module-qtwayland-compositon \
     libgd-perl \
 	--no-install-recommends \
 	&& apt-get -y autoremove --purge && \
