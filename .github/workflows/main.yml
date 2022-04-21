@@ -23,7 +23,7 @@ jobs:
         version: ["alpine", "debian", "ubuntu", "archlinux", "fedora"]
     steps:
       - name: "📥 Checkout Code"
-        uses: actions/checkout@v3.0.1
+        uses: actions/checkout@v3.0.2
         with:
           submodules: 'recursive'
           fetch-depth: 0
