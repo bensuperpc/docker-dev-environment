@@ -91,6 +91,7 @@ RUN apt-get update && apt-get -y install \
     qt6-base-dev \
     libqt6charts6-dev \
     libqt6opengl6-dev \
+    libqt6webenginewidgets6 \
     qt6-3d-dev \
     qt6-multimedia-dev \
     qt6-declarative-dev \
@@ -108,6 +109,7 @@ RUN apt-get update && apt-get -y install \
     qt6-image-formats-plugin-pdf \
     qml6-module-qtquick \
     qml6-module-qtqml \
+    qml6-module-qtwebengine \
     qml6-module-qtquick-controls \
     qml6-module-qtquick-dialogs \
     qml6-module-qtquick-layouts \
