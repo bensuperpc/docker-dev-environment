@@ -73,6 +73,7 @@ RUN pacman-key --init && pacman -Syu --noconfirm && \
     qt6-quicktimeline \
     mesa \
     perl-gd \
+    cuda-tools \
     && pacman -Scc --noconfirm
 
 RUN git clone --recurse-submodules --remote-submodules https://github.com/crosstool-ng/crosstool-ng.git \
