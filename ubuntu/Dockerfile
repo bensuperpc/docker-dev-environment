@@ -107,8 +107,6 @@ RUN apt-get update && apt-get -y install \
     qt6-qmltooling-plugins \
     qt6-3d-defaultgeometryloader-plugin \
     qt6-image-formats-plugin-pdf \
-    qtwebengine6-dev-tools \
-    qtwebengine6-dev \
     qml6-module-qtquick \
     qml6-module-qtqml \
     qml6-module-qtwebengine \
