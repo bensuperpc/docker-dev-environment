@@ -8,6 +8,10 @@ ENV VERSION=$VERSION
 ENV CT_ALLOW_BUILD_AS_ROOT_SURE=1
 ENV CT_PREFIX=/usr/src/myapp
 
+ENV CUDA_HOME=/opt/cuda
+ENV CUDA_TOOLKIT_ROOT_DIR=/opt/cuda
+ENV CUDACXX=/opt/cuda/bin/nvcc
+
 LABEL author="Bensuperpc <bensuperpc@gmail.com>"
 LABEL mantainer="Bensuperpc <bensuperpc@gmail.com>"
 
@@ -98,9 +102,6 @@ LABEL org.label-schema.schema-version="1.0" \
 	  org.label-schema.vcs-url="https://github.com/bensuperpc/dev-environment" \
 	  org.label-schema.vcs-ref=$VCS_REF \
 	  org.label-schema.docker.cmd="docker build -t bensuperpc/dev-environment -f Dockerfile ."
-
-ENV CT_ALLOW_BUILD_AS_ROOT_SURE=1
-ENV CT_PREFIX=/usr/src/myapp
 
 VOLUME [ "/usr/src/myapp" ]
 WORKDIR /usr/src/myapp
