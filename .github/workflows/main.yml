@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: ["alpine", "debian", "ubuntu", "archlinux", "fedora"]
+        version: ["debian", "ubuntu", "archlinux", "fedora"]
     steps:
       - name: "📥 Checkout Code"
         uses: actions/checkout@v3.0.2
